@@ -23,5 +23,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "gh3": "^1.0.3",
+    "async": "^2.1.4"
+  }
 }
