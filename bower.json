@@ -1,0 +1,31 @@
+{
+  "name": "snappyrobotics.github.io",
+  "homepage": "http://snappyrobotics.github.io",
+  "authors": [
+    "prajankya <prajankya@gmail.com>"
+  ],
+  "description": "Website for documentation on snappy project",
+  "main": "index.html",
+  "keywords": [
+    "snappy",
+    "robotics",
+    "automation",
+    "node",
+    "nodered",
+    "red",
+    "javascript"
+  ],
+  "license": "GPL-3.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gh3": "^1.0.3",
+    "async": "^2.1.4"
+  }
+}
