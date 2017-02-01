@@ -53,3 +53,12 @@ jspm_packages
 
 !/bower_components/underscore/underscore.js
 !/bower_components/underscore/LICENSE
+
+
+
+/bower_components/jquery/**/*
+!/bower_components/jquery/LICENSE.txt
+
+!/bower_components/jquery/dist/
+!/bower_components/jquery/dist/jquery.min.js
+!/bower_components/jquery/dist/jquery.min.map
