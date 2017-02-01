@@ -36,10 +36,20 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-bower_components/**/**/*
-!bower_components/async/LICENSE
-!bower_components/async/dist/async.min.js
-!bower_components/async/dist/async.min.map
-!bower_components/gh3/gh3.js
-!bower_components/underscore/underscore.js
-!bower_components/underscore/LICENSE
+
+/bower_components/*.*
+
+/bower_components/async/**/*
+!/bower_components/async/LICENSE
+
+!/bower_components/async/dist/
+!/bower_components/async/dist/async.min.js
+!/bower_components/async/dist/async.min.map
+
+/bower_components/gh3/**/*
+!/bower_components/gh3/gh3.js
+
+/bower_components/underscore/**/*
+
+!/bower_components/underscore/underscore.js
+!/bower_components/underscore/LICENSE
