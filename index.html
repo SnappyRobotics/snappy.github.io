@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        @import url('http://fonts.googleapis.com/css?family=Open+Sans');
+        @import url('https://fonts.googleapis.com/css?family=Nunito');
+        @import url('https://fonts.googleapis.com/css?family=Farsan');
+
+        .first_view {
+            text-align: center;
+            height: calc(100vh - 40px)!important;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .first_view object {
+            width: 50%;
+            margin-left: -8%;
+            padding-top: 20vh;
+        }
+
+        #snappy{
+          font-family: 'Farsan', cursive;
+          letter-spacing: 5px;
+          font-size: 400%;
+          color: #8c8c8c ;
+          padding-top: 50px;
+          margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navigation-menu">
+        <ul>
+            <li><a href="#section-1">Home</a></li>
+            <li><a href="#section-2">About Project</a></li>
+            <li><a href="#section-3">Time Line</a></li>
+            <li><a href="#section-4">Repositories</a></li>
+            <li><a href="#section-5">Contact</a></li>
+
+        </ul>
+    </nav>
+    <div id="content">
+        <section id="section-1">
+            <div class="content">
+              <div class="first_view">
+                 <object data="/images/logo.svg" type="image/svg+xml" id="alphasvg"></object>
+
+              <div id="snappy">Snappy Robotics</div>
+               </div>
+             </div>
+        </section>
+        <section id="section-2">
+            <div class="content">
+                <h2>About Project</h2>
+                <hr />
+                <p>The project aims at developing a platform for Rapid Prototyping in Industrial Automation and Robotics.Rapid prototyping finds a wide range in various segments of the market on basis of different kinds of applications. The market can be broadly classified into various categories based on the application developed. Here, the market can be divided into three segments i.e Beginners, Intermediate and Advanced. The objective is to develop a platform for the Intermediate segment.</p>
+                <p>The project is divided into parts as User Interface, Software and Hardware. The User interface is created in such a way that it can be accessed online through any browser by using a particular URL.Through this UI the user can control, check and keep a track of the ongoing process on the board. The software is developed to configure, change or rewrite the program on the board for the modules connected to it. The Software and the UI communicate through the http site. The changes performed in the software can be visualized in the UI. Hardware consists of GPIO module, keyboard, Mouse, Joystick, Camera etc. As per the need of the user various modules and sensors can be connected to the board.</p>
+                <p>Based on the market segment selected the platform is classified into four configurations as follows:</p>
+                <ul class="a">
+                  <li>Board along with processor</li>
+                  <li>Board without processor + PC</li>
+                  <li>Board along with processor + PC</li>
+                  <li>Board along with processor (A)+ Board without processor(B)</li>
+                </ul>
+
+                <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
+            </div>
+        </section>
+        <section id="section-3">
+          <div class="content">
+              <h2>Time Line</h2>
+              <hr />
+              <h3>Here we will display the Project timeline.<h3/>
+                <ul class="b">
+                  <li>Combined Milestones</li>
+                  <li>In-Progress issues</li>
+                  <li>Live Assesment</li>
+                </ul>
+
+              <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
+          </div>
+        </section>
+        <section id="section-4">
+          <div class="content">
+              <h2>Repositories</h2>
+              <hr />
+              <h3> Brief introduction of all the repositories that are present in our project.</h3>
+              <p>Complete information of all the sub projects present in each Repo and the list of issues for the same</p>
+              <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
+          </div>
+        </section>
+        <section id="section-5">
+          <div class="content">
+              <h2>Contact</h2>
+              <hr />
+              <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
+          </div>
+        </section>
+    </div>
+    <!-- Google CDN jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- Page Scroll to id plugin -->
+    <script src="/js/PageScroll2id.js"></script>
+    <script>
+        (function($) {
+            $(window).load(function() {
+
+                /* Page Scroll to id fn call */
+                $("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+                    highlightSelector: "#navigation-menu a",
+                    scrollingEasing: "easeOutExpo",
+                    scrollEasing:"easeOutExpo"
+                });
+
+                /* demo functions */
+                $("a[rel='next']").click(function(e) {
+                    e.preventDefault();
+                    var to = $(this).parent().parent("section").next().attr("id");
+                    $.mPageScroll2id("scrollTo", to);
+                });
+
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
