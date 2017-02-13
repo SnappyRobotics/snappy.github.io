@@ -4,10 +4,66 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Slider Test 1</title>
+		<style media="screen">
+			body,
+			html {
+				padding: 0;
+				margin: 0;
+				background-color: #222;
+			}
+
+			.slider {
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+51,ffffff+100&1+0,0+51,1+100 */
+				background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+				/* FF3.6-15 */
+				background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+				/* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+				/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+				/* IE6-9 */
+				position: relative;
+			}
+
+			.slider>.viewer {
+				height: 100%;
+				width: 100%;
+				padding-top: 5%;
+			}
+
+			.slider .imgs {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
 	</head>
 
 	<body>
+		<div class="slider">
+			<!-- <img class="imgs" src="img/ard.png" /> -->
+		</div>
 
+		<br>
+
+		<div class="slider">
+		</div>
+
+		<!-- Google CDN jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".slider").each(function() {
+					$(this).css({
+						width: 600,
+						height: 600
+					})
+					$(this).append(
+						$("<div/>")
+						.addClass("viewer")
+					)
+				})
+			})
+		</script>
 	</body>
 
 </html>
