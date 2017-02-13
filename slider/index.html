@@ -46,6 +46,10 @@
 				text-align: center;
 			}
 
+			.slider>.viewer>.imgs {
+				max-height: 100%;
+			}
+
 			.slider>.bottom_viewer,
 			.slider>.top_viewer {
 				height: 22%;
@@ -76,9 +80,15 @@
 				margin-right: auto;
 			}
 
+			.slider>.top_viewer>.imgs {
+				bottom: 0;
+				position: absolute;
+			}
+
 			.slider .imgs {
 				display: none;
 				height: 100%;
+				max-width: 100%;
 			}
 
 			.slider>.bottom_viewer>.imgs,
@@ -133,23 +143,50 @@
 					)
 					this.bottom_viewer = this.obj.find('.bottom_viewer')
 					this.imgs = this.obj.find(".imgs");
+					this.index = 0;
+
+					this.scroll = function(delay) {
+						this.index++;
+
+						if (this.index == this.imgs.length) {
+							this.index = 0;
+						}
+
+						this.set(this.index)
+						var that = this
+						setTimeout(function() {
+							that.scroll(delay)
+						}, delay)
+					}
 
 					this.set = function(ind) {
 						this.viewer.empty()
 
+						this.top_viewer.empty()
 						this.bottom_viewer.empty()
 						$(this.imgs[ind]).appendTo(this.viewer)
 
-						console.log(this.bottom_viewer);
-						$(this.imgs[ind + 1]).appendTo(this.bottom_viewer)
+						if (ind < this.imgs.length - 1) {
+							$(this.imgs[ind + 1]).appendTo(this.bottom_viewer)
+						}
+
+						if (ind != 0) {
+							$(this.imgs[ind - 1]).appendTo(this.top_viewer)
+						}
+
 						this.index = ind
 					}
 					return this;
 				}
 
+
 				$(".slider").each(function() {
 					var s = slider($(this))
-					s.set(0)
+					s.set(3)
+					s.scroll(2000);
+					/*setTimeout(function() {
+						s.set(2)
+					}, 1000)*/
 					/*
 					this.changeImg = function(ind) {
 						viewer.removeAll()
