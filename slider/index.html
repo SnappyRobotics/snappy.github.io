@@ -12,8 +12,8 @@
 				background-color: #222;
 			}
 
-			.slider {
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+51,ffffff+100&1+0,0+51,1+100 */
+			.slider::before {
+				content: ' ';
 				background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
 				/* FF3.6-15 */
 				background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
@@ -22,6 +22,17 @@
 				/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
 				/* IE6-9 */
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: 99;
+			}
+
+			.slider {
+				border: 5px solid black;
+				z-index: 50;
 				position: relative;
 			}
 
@@ -35,7 +46,31 @@
 				text-align: center;
 			}
 
-			.slider>.viewer>.imgs {
+			.slider>.bottom_viewer,
+			.slider>.top_viewer {
+				height: 22%;
+				background-color: white;
+				position: absolute;
+				width: 100%;
+				z-index: -1;
+				overflow: hidden;
+			}
+
+			.slider>.bottom_viewer {
+				margin-top: auto;
+				bottom: 0px;
+				margin-bottom: 0;
+			}
+
+			.slider>.top_viewer {
+				top: 0px;
+				margin-top: 0;
+				margin-bottom: auto;
+			}
+
+			.slider>.viewer>.imgs,
+			.slider>.bottom_viewer>.imgs,
+			.slider>.top_viewer>.imgs {
 				display: block;
 				margin-left: auto;
 				margin-right: auto;
@@ -45,12 +80,22 @@
 				display: none;
 				height: 100%;
 			}
+
+			.slider>.bottom_viewer>.imgs,
+			.slider>.top_viewer>.imgs {
+				width: 100%;
+				height: auto;
+			}
 		</style>
 	</head>
 
 	<body>
 		<div class="slider">
 			<img class="imgs" src="img/ard.png" />
+			<img class="imgs" src="img/beag.jpg" />
+			<img class="imgs" src="img/lbb.jpg" />
+			<img class="imgs" src="img/prac.jpg" />
+			<img class="imgs" src="img/rasp.png" />
 		</div>
 		<!--
 		<br>
@@ -62,22 +107,64 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(function() {
-				$(".slider").each(function() {
-					$(this).css({
+
+				var slider = function(o) {
+					this.obj = o
+					this.obj.css({
 						width: 600,
 						height: 600
 					})
-					$(this).append(
+
+					this.obj.append(
 						$("<div/>")
 						.addClass("viewer")
 					)
-					var viewer = $(this).find('.viewer')
+					this.viewer = this.obj.find('.viewer')
+
+					this.obj.append(
+						$("<div/>")
+						.addClass("top_viewer")
+					)
+					this.top_viewer = this.obj.find('.top_viewer')
+
+					this.obj.append(
+						$("<div/>")
+						.addClass("bottom_viewer")
+					)
+					this.bottom_viewer = this.obj.find('.bottom_viewer')
+					this.imgs = this.obj.find(".imgs");
+
+					this.set = function(ind) {
+						this.viewer.empty()
+
+						this.bottom_viewer.empty()
+						$(this.imgs[ind]).appendTo(this.viewer)
+
+						console.log(this.bottom_viewer);
+						$(this.imgs[ind + 1]).appendTo(this.bottom_viewer)
+						this.index = ind
+					}
+					return this;
+				}
+
+				$(".slider").each(function() {
+					var s = slider($(this))
+					s.set(0)
+					/*
+					this.changeImg = function(ind) {
+						viewer.removeAll()
+						var i = $($(this).find(".imgs")[0])
+						i.appendTo(viewer)
+
+						$(this).ind = ind
+					}
+
+
+					this.changeImg(0)
+					*/
 					//
-					var i = $($(this).find(".imgs")[0])
-					i.appendTo(viewer)
 					//i.show()
 					//viewer.append(i)
-					console.log(i);
 				})
 			})
 		</script>
