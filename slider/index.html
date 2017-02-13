@@ -31,12 +31,14 @@
 			}
 
 			.slider {
-				border: 5px solid black;
+				#border: 5px solid black;
 				z-index: 50;
 				position: relative;
 			}
 
 			.slider>.viewer {
+				border-top: 2px solid rgba(200, 200, 200, 0.5);
+				border-bottom: 2px solid rgba(200, 200, 200, 0.5);
 				width: 100%;
 				position: relative;
 				height: 60%;
@@ -52,7 +54,7 @@
 
 			.slider>.bottom_viewer,
 			.slider>.top_viewer {
-				height: 22%;
+				height: 20%;
 				background-color: white;
 				position: absolute;
 				width: 100%;
@@ -107,104 +109,41 @@
 			<img class="imgs" src="img/prac.jpg" />
 			<img class="imgs" src="img/rasp.png" />
 		</div>
-		<!--
 		<br>
-
 		<div class="slider">
-		</div> -->
+			<img class="imgs" src="img/ard.png" />
+			<img class="imgs" src="img/beag.jpg" />
+			<img class="imgs" src="img/lbb.jpg" />
+			<img class="imgs" src="img/prac.jpg" />
+			<img class="imgs" src="img/rasp.png" />
+		</div>
 
 		<!-- Google CDN jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="slider.js" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function() {
 
-				var slider = function(o) {
-					this.obj = o
-					this.obj.css({
-						width: 600,
-						height: 600
-					})
 
-					this.obj.append(
-						$("<div/>")
-						.addClass("viewer")
-					)
-					this.viewer = this.obj.find('.viewer')
-
-					this.obj.append(
-						$("<div/>")
-						.addClass("top_viewer")
-					)
-					this.top_viewer = this.obj.find('.top_viewer')
-
-					this.obj.append(
-						$("<div/>")
-						.addClass("bottom_viewer")
-					)
-					this.bottom_viewer = this.obj.find('.bottom_viewer')
-					this.imgs = this.obj.find(".imgs");
-					this.index = 0;
-
-					this.scroll = function(delay) {
-						this.index++;
-
-						if (this.index == this.imgs.length) {
-							this.index = 0;
-						}
-
-						this.set(this.index)
-						var that = this
-						setTimeout(function() {
-							that.scroll(delay)
-						}, delay)
-					}
-
-					this.set = function(ind) {
-						this.viewer.empty()
-
-						this.top_viewer.empty()
-						this.bottom_viewer.empty()
-						$(this.imgs[ind]).appendTo(this.viewer)
-
-						if (ind < this.imgs.length - 1) {
-							$(this.imgs[ind + 1]).appendTo(this.bottom_viewer)
-						}
-
-						if (ind != 0) {
-							$(this.imgs[ind - 1]).appendTo(this.top_viewer)
-						}
-
-						this.index = ind
-					}
-					return this;
-				}
-
+				var i = 0;
+				var sliders = []
 
 				$(".slider").each(function() {
-					var s = slider($(this))
-					s.set(3)
-					s.scroll(2000);
-					/*setTimeout(function() {
-						s.set(2)
-					}, 1000)*/
-					/*
-					this.changeImg = function(ind) {
-						viewer.removeAll()
-						var i = $($(this).find(".imgs")[0])
-						i.appendTo(viewer)
-
-						$(this).ind = ind
-					}
-
-
-					this.changeImg(0)
-					*/
-					//
-					//i.show()
-					//viewer.append(i)
+					sliders.push($(this).slider())
 				})
+
+				window.i = 0;
+				for (var i = 0; i < sliders.length; i++) {
+					setTimeout(function() {
+
+						sliders[window.i].scroll(2000)
+						window.i++
+					}, i * 1000)
+				}
+
 			})
 		</script>
 	</body>
 
 </html>
+>
