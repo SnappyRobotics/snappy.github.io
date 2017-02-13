@@ -1,149 +1,184 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>Slider Test 1</title>
-		<style media="screen">
-			body,
-			html {
-				padding: 0;
-				margin: 0;
-				background-color: #222;
-			}
+<head>
+	<meta charset="utf-8">
+	<title>Slider Test 1</title>
+	<style media="screen">
+		body,
+		html {
+			padding: 0;
+			margin: 0;
+			background-color: grey;
+		}
 
-			.slider::before {
-				content: ' ';
-				background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
-				/* FF3.6-15 */
-				background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
-				/* Chrome10-25,Safari5.1-6 */
-				background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
-				/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
-				/* IE6-9 */
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				z-index: 99;
-			}
+		.slider::before {
+			content: ' ';
+			background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+			/* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+			/* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+			/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+			/* IE6-9 */
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 99;
+		}
 
-			.slider {
-				#border: 5px solid black;
-				z-index: 50;
-				position: relative;
-			}
+		.slider {
+			#border: 5px solid black;
+			z-index: 50;
+			position: relative;
+		}
 
-			.slider>.viewer {
-				border-top: 2px solid rgba(200, 200, 200, 0.5);
-				border-bottom: 2px solid rgba(200, 200, 200, 0.5);
-				width: 100%;
-				position: relative;
-				height: 60%;
-				top: 50%;
-				transform: translateY(-50%);
-				background-color: white;
-				text-align: center;
-			}
+		.slider>.viewer {
+			border-top: 2px solid rgba(200, 200, 200, 0.5);
+			border-bottom: 2px solid rgba(200, 200, 200, 0.5);
+			width: 100%;
+			position: relative;
+			height: 60%;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: white;
+			text-align: center;
+		}
 
-			.slider>.viewer>.imgs {
-				max-height: 100%;
-			}
+		.slider>.viewer>.imgs {
+			max-height: 100%;
+		}
 
-			.slider>.bottom_viewer,
-			.slider>.top_viewer {
-				height: 20%;
-				background-color: white;
-				position: absolute;
-				width: 100%;
-				z-index: -1;
-				overflow: hidden;
-			}
+		.slider>.bottom_viewer,
+		.slider>.top_viewer {
+			height: 20%;
+			background-color: white;
+			position: absolute;
+			width: 100%;
+			z-index: -1;
+			overflow: hidden;
+		}
 
-			.slider>.bottom_viewer {
-				margin-top: auto;
-				bottom: 0px;
-				margin-bottom: 0;
-			}
+		.slider>.bottom_viewer {
+			margin-top: auto;
+			bottom: 0px;
+			margin-bottom: 0;
+		}
 
-			.slider>.top_viewer {
-				top: 0px;
-				margin-top: 0;
-				margin-bottom: auto;
-			}
+		.slider>.top_viewer {
+			top: 0px;
+			margin-top: 0;
+			margin-bottom: auto;
+		}
 
-			.slider>.viewer>.imgs,
-			.slider>.bottom_viewer>.imgs,
-			.slider>.top_viewer>.imgs {
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
-			}
+		.slider>.viewer>.imgs,
+		.slider>.bottom_viewer>.imgs,
+		.slider>.top_viewer>.imgs {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
 
-			.slider>.top_viewer>.imgs {
-				bottom: 0;
-				position: absolute;
-			}
+		.slider>.top_viewer>.imgs {
+			bottom: 0;
+			position: absolute;
+		}
 
-			.slider .imgs {
-				display: none;
-				height: 100%;
-				max-width: 100%;
-			}
+		.slider .imgs {
+			display: none;
+			height: 100%;
+			max-width: 100%;
+		}
 
-			.slider>.bottom_viewer>.imgs,
-			.slider>.top_viewer>.imgs {
-				width: 100%;
-				height: auto;
-			}
-		</style>
-	</head>
+		.slider>.bottom_viewer>.imgs,
+		.slider>.top_viewer>.imgs {
+			width: 100%;
+			height: auto;
+		}
+	</style>
+</head>
 
-	<body>
-		<div class="slider">
-			<img class="imgs" src="img/ard.png" />
-			<img class="imgs" src="img/beag.jpg" />
-			<img class="imgs" src="img/lbb.jpg" />
-			<img class="imgs" src="img/prac.jpg" />
-			<img class="imgs" src="img/rasp.png" />
-		</div>
-		<br>
-		<div class="slider">
-			<img class="imgs" src="img/ard.png" />
-			<img class="imgs" src="img/beag.jpg" />
-			<img class="imgs" src="img/lbb.jpg" />
-			<img class="imgs" src="img/prac.jpg" />
-			<img class="imgs" src="img/rasp.png" />
-		</div>
+<body>
+	<p>Processing with GPIO</p>
+	<div class="slider">
+		<img class="imgs" src="img/ard.png" />
+		<img class="imgs" src="img/beag.jpg" />
+		<img class="imgs" src="img/lbb.jpg" />
+		<img class="imgs" src="img/prac.jpg" />
+		<img class="imgs" src="img/rasp.png" />
+		<img class="imgs" src="img/toradex-apalis-t30-front.jpg" />
+	</div>
+	<br>
+	<p>Combination of Processing with GPIO & without GPIO</p>
+	<div class="slider">
+		<img class="imgs" src="img/ard.png" />
+		<img class="imgs" src="img/beag.jpg" />
+		<img class="imgs" src="img/lbb.jpg" />
+		<img class="imgs" src="img/prac.jpg" />
+		<img class="imgs" src="img/rasp.png" />
+		<img class="imgs" src="img/toradex-apalis-t30-front.jpg" />
+	</div>
+	<br>
+	<div class="slider">
+		<img class="imgs" src="img/laptop.jpg" />
+		<img class="imgs" src="img/NUC.jpg" />
+		<img class="imgs" src="img/pc.png" />
+	</div>
+	<br>
+	<p>Combination of Processing with GPIO & without GPIO and only GPIO</p>
+	<div class="slider">
+		<img class="imgs" src="img/ard.png" />
+		<img class="imgs" src="img/beag.jpg" />
+		<img class="imgs" src="img/lbb.jpg" />
+		<img class="imgs" src="img/prac.jpg" />
+		<img class="imgs" src="img/rasp.png" />
+		<img class="imgs" src="img/toradex-apalis-t30-front.jpg" />
+	</div>
+	<br>
+	<div class="slider">
+		<img class="imgs" src="img/laptop.jpg" />
+		<img class="imgs" src="img/NUC.jpg" />
+		<img class="imgs" src="img/pc.png" />
+	</div>
+	<br>
+	<div class="slider">
+		<img class="imgs" src="img/ard.png" />
+		<img class="imgs" src="img/node mcu.jpg" />
 
-		<!-- Google CDN jQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="slider.js" charset="utf-8"></script>
-		<script type="text/javascript">
-			$(function() {
+	</div>
 
 
-				var i = 0;
-				var sliders = []
 
-				$(".slider").each(function() {
-					sliders.push($(this).slider())
-				})
 
-				window.i = 0;
-				for (var i = 0; i < sliders.length; i++) {
-					setTimeout(function() {
+	<!-- Google CDN jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="slider.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
 
-						sliders[window.i].scroll(2000)
-						window.i++
-					}, i * 1000)
-				}
 
+			var i = 0;
+			var sliders = []
+
+			$(".slider").each(function() {
+				sliders.push($(this).slider())
 			})
-		</script>
-	</body>
+
+			window.i = 0;
+			for (var i = 0; i < sliders.length; i++) {
+				setTimeout(function() {
+
+					sliders[window.i].scroll(2000)
+					window.i++
+				}, i * 1000)
+			}
+
+		})
+	</script>
+</body>
 
 </html>
 >
