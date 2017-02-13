@@ -26,13 +26,23 @@
 			}
 
 			.slider>.viewer {
-				height: 100%;
 				width: 100%;
-				padding-top: 5%;
+				position: relative;
+				height: 60%;
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: white;
+				text-align: center;
+			}
+
+			.slider>.viewer>.imgs {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
 			}
 
 			.slider .imgs {
-				width: 100%;
+				display: none;
 				height: 100%;
 			}
 		</style>
@@ -40,13 +50,13 @@
 
 	<body>
 		<div class="slider">
-			<!-- <img class="imgs" src="img/ard.png" /> -->
+			<img class="imgs" src="img/ard.png" />
 		</div>
-
+		<!--
 		<br>
 
 		<div class="slider">
-		</div>
+		</div> -->
 
 		<!-- Google CDN jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -61,6 +71,13 @@
 						$("<div/>")
 						.addClass("viewer")
 					)
+					var viewer = $(this).find('.viewer')
+					//
+					var i = $($(this).find(".imgs")[0])
+					i.appendTo(viewer)
+					//i.show()
+					//viewer.append(i)
+					console.log(i);
 				})
 			})
 		</script>
