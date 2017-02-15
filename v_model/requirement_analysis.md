@@ -39,4 +39,3 @@
 |37|The code written should consume less memory|Wish|8|
 |38|If needed the code can be directly written on the board|Wish|7|
 |39|The software must be able to communicate to the board and the UI at the same time|Wish|8|
- 
