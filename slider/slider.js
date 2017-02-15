@@ -2,8 +2,8 @@
 
   $.fn.slider = function() {
     this.css({
-      width: 300,
-      height: 300
+      width:150,
+      height: 150
     })
 
 

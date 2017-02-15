@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="/css/style.css">
     <style>
-
         @import url('https://fonts.googleapis.com/css?family=Farsan');
-
         .first_view {
             text-align: center;
             height: calc(100vh - 40px)!important;
@@ -21,18 +19,35 @@
             padding-top: 20vh;
         }
 
-        #snappy{
-          font-family: 'Farsan', cursive;
-          letter-spacing: 5px;
-          font-size: 400%;
-          color: #8c8c8c ;
-          padding-top: 50px;
-          margin: 0px;
+        #snappy {
+            font-family: 'Farsan', cursive;
+            letter-spacing: 5px;
+            font-size: 400%;
+            color: #8c8c8c;
+            padding-top: 50px;
+            margin: 0px;
         }
-        iframe{
-          border: none;
-          width: 100%;
-          height: 80vh;
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 80vh;
+        }
+
+        .div2 {
+            width: 300px;
+            height: 100px;
+            padding: 50px;
+            border: 1px solid red;
+        }
+
+        .inline {
+            display: inline-block;
+            position: relative;
+            margin: 1%;
+            width: 15%;
+            height: 15%;
+            background-color: lightgrey;
         }
     </style>
 </head>
@@ -51,12 +66,12 @@
     <div id="content">
         <section id="section-1">
             <div class="content">
-              <div class="first_view">
-                 <object data="/images/logo.svg" type="image/svg+xml" id="alphasvg"></object>
+                <div class="first_view">
+                    <object data="/images/logo.svg" type="image/svg+xml" id="alphasvg"></object>
 
-              <div id="snappy">Snappy Robotics</div>
-               </div>
-             </div>
+                    <div id="snappy">Snappy Robotics</div>
+                </div>
+            </div>
         </section>
         <section id="section-2">
             <div class="content">
@@ -64,24 +79,29 @@
                 <hr />
                 <a href="v_model.html">V Model</a>
                 <a href="slider/index.html">Configure</a>
-                <p>The project aims at developing a platform for Rapid Prototyping in Industrial Automation and Robotics.Rapid prototyping finds a wide range in various segments of the market on basis of different kinds of applications. The market can be broadly classified into various categories based on the application developed. Here, the market can be divided into three segments i.e Beginners, Intermediate and Advanced. The objective is to develop a platform for the Intermediate segment.</p>
-                <p>The project is divided into parts as User Interface, Software and Hardware. The User interface is created in such a way that it can be accessed online through any browser by using a particular URL.Through this UI the user can control, check and keep a track of the ongoing process on the board. The software is developed to configure, change or rewrite the program on the board for the modules connected to it. The Software and the UI communicate through the http site. The changes performed in the software can be visualized in the UI. Hardware consists of GPIO module, keyboard, Mouse, Joystick, Camera etc. As per the need of the user various modules and sensors can be connected to the board.</p>
+                <p>The project aims at developing a platform for Rapid Prototyping in Industrial Automation and Robotics.Rapid prototyping finds a wide range in various segments of the market on basis of different kinds of applications. The market can be
+                    broadly classified into various categories based on the application developed. Here, the market can be divided into three segments i.e Beginners, Intermediate and Advanced. The objective is to develop a platform for the Intermediate
+                    segment.
+                </p>
+                <p>The project is divided into parts as User Interface, Software and Hardware. The User interface is created in such a way that it can be accessed online through any browser by using a particular URL.Through this UI the user can control,
+                    check and keep a track of the ongoing process on the board. The software is developed to configure, change or rewrite the program on the board for the modules connected to it. The Software and the UI communicate through the http site.
+                    The changes performed in the software can be visualized in the UI. Hardware consists of GPIO module, keyboard, Mouse, Joystick, Camera etc. As per the need of the user various modules and sensors can be connected to the board.</p>
                 <p>Based on the market segment selected the platform is classified into four configurations as follows:</p>
                 <ul class="a">
-                  <li>Board along with processor</li>
-                  <li>Board without processor + PC</li>
-                  <li>Board along with processor + PC</li>
-                  <li>Board along with processor (A)+ Board without processor(B)</li>
+                    <li>Board along with processor</li>
+                    <li>Board without processor + PC</li>
+                    <li>Board along with processor + PC</li>
+                    <li>Board along with processor (A)+ Board without processor(B)</li>
                 </ul>
 
                 <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
             </div>
         </section>
         <section id="section-3">
-          <div class="content">
-              <h2>Time Line</h2>
-              <hr />
-              <h3>Here we will display the Project timeline.<h3/>
+            <div class="content">
+                <h2>Time Line</h2>
+                <hr />
+                <h3>Here we will display the Project timeline.<h3/>
                 <ul class="b">
                   <li>Combined Milestones</li>
                   <li>In-Progress issues</li>
@@ -95,16 +115,49 @@
           <div class="content">
               <h2>Repositories</h2>
               <hr />
-              <h3> Brief introduction of all the repositories that are present in our project.</h3>
-              <p>Complete information of all the sub projects present in each Repo and the list of issues for the same</p>
-              <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
-          </div>
+
+<div class="div2 inline">
+<h3>Snappy IO Nodes</h3>
+                <p>Node red nodes for IO for snappy
+                    <p/>
+            </div>
+
+            <div class="div2 inline">
+                <h3>Snappy Logic Nodes<h3/>
+<p>Node red nodes for logic for snappy<p/>
+</div>
+
+<div class="div2 inline">
+<h3>snappyrobotics.github.io<h3/>
+<p>Website for documentation on snappy project<p/>
+</div>
+
+<br>
+
+<div class="div2 inline">
+<h3>NodeRed Container<h3/>
+<p>A container package helping to launch node red from scripts<p/>
+</div>
+
+<div class="div2 inline">
+<h3>GPIO<h3/>
+<p>Altium Project for GPIO<p/>
+</div>
+
+<div class="div2 inline">
+<h3>USB-hub<h3/>
+<p>Altium Project for USB hub<p/>
+</div>
+<br>
+
+                <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
+            </div>
         </section>
         <section id="section-5">
-          <div class="content">
-              <iframe src="http://prajankya.me/snappy"></iframe>
-              <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
-          </div>
+            <div class="content">
+                <iframe src="http://prajankya.me/snappy"></iframe>
+                <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
+            </div>
         </section>
     </div>
     <!-- Google CDN jQuery -->
@@ -120,7 +173,7 @@
                 $("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
                     highlightSelector: "#navigation-menu a",
                     scrollingEasing: "easeOutExpo",
-                    scrollEasing:"easeOutExpo"
+                    scrollEasing: "easeOutExpo"
                 });
 
                 /* demo functions */
@@ -129,6 +182,14 @@
                     var to = $(this).parent().parent("section").next().attr("id");
                     $.mPageScroll2id("scrollTo", to);
                 });
+
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
+     });
 
             });
         })(jQuery);
