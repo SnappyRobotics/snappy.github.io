@@ -112,9 +112,11 @@ nav ul, nav ol, nav li {
     background: #362f2d;
     background: rgb(107, 95, 89);
     background: rgb(254,255,255);
-background: -moz-linear-gradient(-45deg,  rgba(254,255,255,1) 0%, rgba(210,235,249,1) 100%);
-background: -webkit-linear-gradient(-45deg,  rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%);
-background: linear-gradient(135deg,  rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%);
+  background: #304352; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #304352 , #d7d2cc); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #304352 , #d7d2cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+             Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=1 );
 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
@@ -130,10 +132,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', end
     background: rgb(239, 231, 220);
 
     background: rgb(255,255,255);
-background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
-background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 );
+
+
+  background: #485563; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #485563 , #29323c); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #485563 , #29323c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efe7dc', endColorstr='#c6b6a4', GradientType=1);
     color: #25201e;
