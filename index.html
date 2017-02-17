@@ -144,49 +144,53 @@
                     <h4>snappyrobotics.github.io.</h4>
                     <p>A Gantt Chart based Timeline tracker
                         <p/>
-                        <a href=Repositories/snappyrobotics.github.io.html " class="btn btn-default ">more</a>
+                        <a href="Repositories/snappyrobotics.github.io.html" class="btn btn-default ">more</a>
                 </div>
                 <br>
-                <a href="#top ">&uarr; Back to top</a> <a href="# " rel="next ">&darr; Next section</a>
+                <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
             </div>
         </section>
 
-        <section id="section-4 ">
-            <div class="content ">
+        <section id="section-4">
+            <div class="content">
                 <h2>Time line</h2>
                 <!-- <hr /> -->
-                <iframe src="http://prajankya.me/snappy "></iframe>
-                <a href="#top ">&uarr; Back to top</a> <a href="# " rel="next ">&darr; Next section</a>
+                <iframe src="http://prajankya.me/snappy"></iframe>
+                <a href="#top">&uarr; Back to top</a> <a href="#" rel="next">&darr; Next section</a>
             </div>
         </section>
 
     </div>
     <!-- Google CDN jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
     <!-- Page Scroll to id plugin -->
-    <script src="/js/PageScroll2id.js "></script>
+    <script src="/js/PageScroll2id.js"></script>
     <script>
         (function($) {
             $(window).load(function() {
 
                 /* Page Scroll to id fn call */
-                $("#navigation-menu a,a[href='#top' ],a[rel='m_PageScroll2id' ] ").mPageScroll2id({
-                    highlightSelector: "#navigation-menu a ",
-                    scrollingEasing: "easeOutExpo ",
-                    scrollEasing: "easeOutExpo "
+                $("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+                    highlightSelector: "#navigation-menu a",
+                    scrollingEasing: "easeOutExpo",
+                    scrollEasing: "easeOutExpo"
                 });
 
                 /* demo functions */
-                $("a[rel='next' ] ").click(function(e) {
+                $("a[rel='next']").click(function(e) {
                     e.preventDefault();
-                    var to = $(this).parent().parent("section ").next().attr("id ");
-                    $.mPageScroll2id("scrollTo ", to);
+                    var to = $(this).parent().parent("section").next().attr("id");
+                    $.mPageScroll2id("scrollTo", to);
                 });
 
             });
         })(jQuery);
     </script>
+</body>
+
+</html>
+ript>
 </body>
 
 </html>
